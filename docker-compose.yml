@@ -1,4 +1,4 @@
-version: '3.5'
+version: "3.5"
 services:
   nodered:
     container_name: nodered-ew
@@ -36,9 +36,8 @@ services:
       POSTGRES_PASSWORD: erick
     volumes:
       - ./init-metabase.sh:/docker-entrypoint-initdb.d/init-metabase.sh
-    entrypoint: ["/bin/bash", "/docker-entrypoint-initdb.d/init-metabase.sh"]
+    entrypoint: ["/bin/sh", "/docker-entrypoint-initdb.d/init-metabase.sh"]
     restart: "no"
-
 
   metabase:
     # building metabase from source as it's not available on ARM
